@@ -1,0 +1,2 @@
+  [1m[35m (5760.2ms)[0m  [1m[35mCREATE DATABASE "Book_Appointment_App_development" ENCODING = 'unicode'[0m
+  [1m[35m (2193.4ms)[0m  [1m[35mCREATE DATABASE "Book_Appointment_App_test" ENCODING = 'unicode'[0m
