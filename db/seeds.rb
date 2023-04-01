@@ -14,6 +14,6 @@ car1 = Car.create(name: 'Jeep', model: 'Range Rover', description: 'Best car eve
 car2 = Car.create(name: 'Tesla', model: 'Model X', description: 'With lasting battery', price: 14000, user_id: user2.id, image_url: 'https://user-images.githubusercontent.com/65233860/178718933-f55aea72-e56c-4f14-9032-a4902203f77a.png')
 car3 = Car.create(name: 'Toyota', model: 'Tx', description: 'A very confortable car', price: 13250, user_id: user3.id, image_url: 'https://user-images.githubusercontent.com/65233860/178718657-5d0b9f51-8a97-4045-a14a-c70913891275.png')
 
-reservation1 = Reservation.create(date: '2018-01-01', city: 'Bujumbura', user_id: user1.id, car_id: car1.id)
-reservation2 = Reservation.create(date: '2018-01-01', city: 'Danmark', user_id: user2.id, car_id: car2.id)
-reservation3 = Reservation.create(date: '2018-01-01', city: 'Nigeria', user_id: user3.id, car_id: car3.id)
+reservation1 = Reservation.create(date: '2023-01-04', city: 'Bujumbura', user_id: user1.id, car_id: car1.id)
+reservation2 = Reservation.create(date: '2023-01-04', city: 'Danmark', user_id: user2.id, car_id: car2.id)
+reservation3 = Reservation.create(date: '2018-01-04', city: 'Nigeria', user_id: user3.id, car_id: car3.id)

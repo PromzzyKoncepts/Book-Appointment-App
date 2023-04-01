@@ -37,3 +37,37 @@ FOREIGN KEY ("car_id")
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3743986867650003660)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (192.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (386.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ndikumana Isaie"], ["email", "ndikumanaisaie@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.346621"], ["updated_at", "2023-04-01 14:10:13.346621"]]
+  [1m[36mTRANSACTION (110.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abdullah Asghar"], ["email", "dulakhan024@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.935080"], ["updated_at", "2023-04-01 14:10:13.935080"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Promise Okechukwu"], ["email", "okechukwupromise638@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.943081"], ["updated_at", "2023-04-01 14:10:13.943081"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Create (248.7ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Jeep"], ["model", "Range Rover"], ["reserved", nil], ["price", 2000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718381-cd6cfcff-a804-4d35-95af-705794d4c4a8.png"], ["description", "Best car ever"], ["user_id", 1], ["created_at", "2023-04-01 14:10:14.588243"], ["updated_at", "2023-04-01 14:10:14.588243"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCar Create (1.2ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Tesla"], ["model", "Model X"], ["reserved", nil], ["price", 14000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718933-f55aea72-e56c-4f14-9032-a4902203f77a.png"], ["description", "With lasting battery"], ["user_id", 2], ["created_at", "2023-04-01 14:10:14.855055"], ["updated_at", "2023-04-01 14:10:14.855055"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Create (35.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2018-01-01"], ["city", "Bujumbura"], ["user_id", 1], ["car_id", 1], ["created_at", "2023-04-01 14:10:15.200628"], ["updated_at", "2023-04-01 14:10:15.200628"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.2ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2018-01-01"], ["city", "Danmark"], ["user_id", 2], ["car_id", 2], ["created_at", "2023-04-01 14:10:15.302037"], ["updated_at", "2023-04-01 14:10:15.302037"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
