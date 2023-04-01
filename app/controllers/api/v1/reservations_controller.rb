@@ -1,4 +1,4 @@
-class Api::V1::ReservationController < ApplicationController
+class Api::V1::ReservationsController < ApplicationController
   # GET /reservations
   def index
     reservations = Reservation.order('created_at DESC')
