@@ -1,0 +1,168 @@
+  [1m[35m (5760.2ms)[0m  [1m[35mCREATE DATABASE "Book_Appointment_App_development" ENCODING = 'unicode'[0m
+  [1m[35m (2193.4ms)[0m  [1m[35mCREATE DATABASE "Book_Appointment_App_test" ENCODING = 'unicode'[0m
+  [1m[35m (557.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (137.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3743986867650003660)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230401104657)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (251.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230401104657"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCars (20230401110501)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (326.6ms)[0m  [1m[35mCREATE TABLE "cars" ("id" bigserial primary key, "name" character varying, "model" character varying, "reserved" boolean, "price" integer, "image_url" character varying, "description" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7eccb46500"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCREATE INDEX "index_cars_on_user_id" ON "cars" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (16.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230401110501"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReservations (20230401110838)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (114.9ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "date" date, "city" character varying, "user_id" bigint NOT NULL, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_48a92fce51"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b81cc956b2"
+FOREIGN KEY ("car_id")
+  REFERENCES "cars" ("id")
+)[0m
+  [1m[35m (47.3ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_user_id" ON "reservations" ("user_id")[0m
+  [1m[35m (27.1ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_car_id" ON "reservations" ("car_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230401110838"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (43.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-01 11:10:19.904036"], ["updated_at", "2023-04-01 11:10:19.904036"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3743986867650003660)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (192.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (386.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ndikumana Isaie"], ["email", "ndikumanaisaie@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.346621"], ["updated_at", "2023-04-01 14:10:13.346621"]]
+  [1m[36mTRANSACTION (110.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abdullah Asghar"], ["email", "dulakhan024@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.935080"], ["updated_at", "2023-04-01 14:10:13.935080"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Promise Okechukwu"], ["email", "okechukwupromise638@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:10:13.943081"], ["updated_at", "2023-04-01 14:10:13.943081"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Create (248.7ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Jeep"], ["model", "Range Rover"], ["reserved", nil], ["price", 2000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718381-cd6cfcff-a804-4d35-95af-705794d4c4a8.png"], ["description", "Best car ever"], ["user_id", 1], ["created_at", "2023-04-01 14:10:14.588243"], ["updated_at", "2023-04-01 14:10:14.588243"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCar Create (1.2ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Tesla"], ["model", "Model X"], ["reserved", nil], ["price", 14000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718933-f55aea72-e56c-4f14-9032-a4902203f77a.png"], ["description", "With lasting battery"], ["user_id", 2], ["created_at", "2023-04-01 14:10:14.855055"], ["updated_at", "2023-04-01 14:10:14.855055"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Create (35.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2018-01-01"], ["city", "Bujumbura"], ["user_id", 1], ["car_id", 1], ["created_at", "2023-04-01 14:10:15.200628"], ["updated_at", "2023-04-01 14:10:15.200628"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.2ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2018-01-01"], ["city", "Danmark"], ["user_id", 2], ["car_id", 2], ["created_at", "2023-04-01 14:10:15.302037"], ["updated_at", "2023-04-01 14:10:15.302037"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 16:24:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (24.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1355.6ms | Allocations: 699)
+Completed 200 OK in 2551ms (Views: 1616.5ms | ActiveRecord: 0.0ms | Allocations: 6033)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2023-04-01 16:25:10 +0200
+Processing by Api::V1::UsersController#index as JSON
+[active_model_serializers]   [1m[36mUser Load (102.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1935.04ms)
+Completed 200 OK in 3550ms (Views: 949.9ms | ActiveRecord: 1037.9ms | Allocations: 13800)
+
+
+Started GET "/api/v1/cars" for 127.0.0.1 at 2023-04-01 16:33:28 +0200
+Processing by Api::V1::CarsController#index as JSON
+  [1m[36mCar Load (113.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/api/v1/cars_controller.rb:4:in `index'
+No serializer found for resource: #<Car id: 1, name: "Jeep", model: "Range Rover", reserved: nil, price: 2000, image_url: "https://user-images.githubusercontent.com/65233860...", description: "Best car ever", user_id: 1, created_at: "2023-04-01 14:10:14.588243000 +0000", updated_at: "2023-04-01 14:10:14.588243000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Car::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 5297ms (Views: 5157.1ms | ActiveRecord: 295.9ms | Allocations: 15274)
+
+
+Started GET "/api/v1/cars" for 127.0.0.1 at 2023-04-01 16:34:51 +0200
+Processing by Api::V1::CarsController#index as JSON
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  ↳ app/controllers/api/v1/cars_controller.rb:4:in `index'
+No serializer found for resource: #<Car id: 1, name: "Jeep", model: "Range Rover", reserved: nil, price: 2000, image_url: "https://user-images.githubusercontent.com/65233860...", description: "Best car ever", user_id: 1, created_at: "2023-04-01 14:10:14.588243000 +0000", updated_at: "2023-04-01 14:10:14.588243000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Car::ActiveRecord_Relation (2.39ms)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.5ms | Allocations: 1251)
+
+
+Started GET "/api/v1/reservations" for 127.0.0.1 at 2023-04-01 16:37:37 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/reservations"):
+  
+Started GET "/api/v1/reservations" for 127.0.0.1 at 2023-04-01 16:39:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/reservations"):
+  
+Started GET "/api/v1/reservations" for 127.0.0.1 at 2023-04-01 16:40:27 +0200
+Processing by Api::V1::ReservationsController#index as JSON
+[active_model_serializers]   [1m[36mReservation Load (342.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY created_at DESC[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/reservations_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1150.45ms)
+Completed 200 OK in 1723ms (Views: 450.6ms | ActiveRecord: 756.1ms | Allocations: 9934)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (188.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (886.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ndikumana Isaie"], ["email", "ndikumanaisaie@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:44:51.450244"], ["updated_at", "2023-04-01 14:44:51.450244"]]
+  [1m[36mTRANSACTION (33.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (23.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abdullah Asghar"], ["email", "dulakhan024@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:44:52.433903"], ["updated_at", "2023-04-01 14:44:52.433903"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Promise Okechukwu"], ["email", "okechukwupromise638@gmail.com"], ["password", "123456"], ["created_at", "2023-04-01 14:44:52.464964"], ["updated_at", "2023-04-01 14:44:52.464964"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (87.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCar Create (251.5ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Jeep"], ["model", "Range Rover"], ["reserved", nil], ["price", 2000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718381-cd6cfcff-a804-4d35-95af-705794d4c4a8.png"], ["description", "Best car ever"], ["user_id", 4], ["created_at", "2023-04-01 14:44:53.306917"], ["updated_at", "2023-04-01 14:44:53.306917"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Create (1.2ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Tesla"], ["model", "Model X"], ["reserved", nil], ["price", 14000], ["image_url", "https://user-images.githubusercontent.com/65233860/178718933-f55aea72-e56c-4f14-9032-a4902203f77a.png"], ["description", "With lasting battery"], ["user_id", 5], ["created_at", "2023-04-01 14:44:53.575875"], ["updated_at", "2023-04-01 14:44:53.575875"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCar Create (1.2ms)[0m  [1m[32mINSERT INTO "cars" ("name", "model", "reserved", "price", "image_url", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Toyota"], ["model", "Carina"], ["reserved", nil], ["price", 13250], ["image_url", "https://user-images.githubusercontent.com/65233860/178718657-5d0b9f51-8a97-4045-a14a-c70913891275.png"], ["description", "A very confortable car"], ["user_id", 6], ["created_at", "2023-04-01 14:44:53.594028"], ["updated_at", "2023-04-01 14:44:53.594028"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCar Load (2.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReservation Create (74.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2023-01-04"], ["city", "Bujumbura"], ["user_id", 4], ["car_id", 3], ["created_at", "2023-04-01 14:44:53.861975"], ["updated_at", "2023-04-01 14:44:53.861975"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.3ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2023-01-04"], ["city", "Danmark"], ["user_id", 5], ["car_id", 4], ["created_at", "2023-04-01 14:44:53.956699"], ["updated_at", "2023-04-01 14:44:53.956699"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReservation Create (41.0ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "city", "user_id", "car_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2018-01-04"], ["city", "Nigeria"], ["user_id", 6], ["car_id", 5], ["created_at", "2023-04-01 14:44:53.972045"], ["updated_at", "2023-04-01 14:44:53.972045"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/reservations" for 127.0.0.1 at 2023-04-01 16:45:30 +0200
+Processing by Api::V1::ReservationsController#index as JSON
+[active_model_serializers]   [1m[36mReservation Load (77.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY created_at DESC[0m
+[active_model_serializers]   ↳ app/controllers/api/v1/reservations_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (84.94ms)
+Completed 200 OK in 93ms (Views: 9.8ms | ActiveRecord: 77.0ms | Allocations: 1685)
+
+
