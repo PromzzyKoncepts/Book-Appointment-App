@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/tmp/cache
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -29,3 +30,5 @@
 /config/master.key
 
 /.env
+/tmp/cache/bootsnap
+/api/.env
