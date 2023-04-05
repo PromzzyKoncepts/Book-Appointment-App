@@ -1,4 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
+  skip_before_action :authenticate_request, only: %i[create login index]
+  # DO well to comment out the code on line 2
   # GET /reservations
   def index
     reservations = Reservation.order('created_at DESC')
@@ -47,6 +49,6 @@ class Api::V1::ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require('reservation').permit(:date, :city, :user_id, :car_id)
+    params.require('reservation').permit(:pickup_date, :return_date, :city, :user_id, :car_id)
   end
 end
