@@ -81,6 +81,7 @@ gem 'cancancan', '~> 1.9'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-jwt'
 gem 'dotenv-rails', groups: %i[development test]
+gem 'jsonapi-serializer'
 gem 'jwt'
 gem 'rack-cors'
 gem 'rspec'
