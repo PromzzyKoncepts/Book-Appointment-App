@@ -324,6 +324,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.13)
   activestorage
+  bcrypt (~> 3.1.7)
   bootsnap
   cancancan (~> 1.9)
   capybara
@@ -354,7 +355,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.9
