@@ -1,27 +1,34 @@
 class Api::V1::UsersController < ApplicationController
-  # GET /users
-  def index
-    @users = User.all
+  skip_before_action :authenticate_request, only: %i[create login index]
 
-    render json: { status: 'SUCCESS', message: 'Loaded Users', data: @users }, status: :ok
+  def index
+    @user = User.all
+    render json: @user
   end
 
-  # POST /users
   def create
     @user = User.new(user_params)
 
     if @user.save
-      render json: { status: 'SUCCESS', message: 'User was successfully created', data: @user }, status: :ok
+      token = encode_token(user_id: @user.id)
+      render json: { status: 'success', message: 'User created', data: { token: }, user: @user }, status: 201
     else
-      render json: { status: 'ERROR', message: 'An error occurred while creating the user' },
-             status: :unprocessable_entity
+      render json: { status: 'Error', message: 'Email exists already' }, status: 422
     end
   end
 
-  private
+  def login
+    @user = User.find_by(email: params[:email])
 
-  # Only allow a list of trusted parameters through.
+    if @user&.authenticate(params[:password])
+      token = encode_token(user_id: @user.id)
+      render json: { status: 'Success', message: 'Logged in successfully', data: { token: } }, status: 200
+    else
+      render json: { status: 'Error', message: 'Invalid email or password' }, status: 401
+    end
+  end
+
   def user_params
-    params.permit(:id, :name, :email, :password)
+    params.permit(:name, :email, :password)
   end
 end
