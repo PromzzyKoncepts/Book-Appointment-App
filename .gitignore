@@ -30,6 +30,5 @@
 /config/master.key
 
 /.env
-
-/tmp/cache/*
-
+/tmp/cache/bootsnap
+/api/.env
