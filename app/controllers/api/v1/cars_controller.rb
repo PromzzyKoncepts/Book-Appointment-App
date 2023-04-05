@@ -1,4 +1,6 @@
 class Api::V1::CarsController < ApplicationController
+  skip_before_action :authenticate_request, only: %i[create login index]
+
   def index
     @cars = Car.all
     render json: @cars
