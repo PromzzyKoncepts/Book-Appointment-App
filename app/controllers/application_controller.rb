@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
-    before_action :authenticate_request
+  before_action :authenticate_request
 
-    SECRET_KEY = Rails.application.secret_key_base. to_s
+  SECRET_KEY = Rails.application.secret_key_base.to_s
 
   def encode_token(payload, exp = 24.hours.from_now)
     payload[:exp] = exp.to_i
