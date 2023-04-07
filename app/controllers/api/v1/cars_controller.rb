@@ -1,25 +1,43 @@
 class Api::V1::CarsController < ApplicationController
-  skip_before_action :authenticate_request, only: %i[create login index]
-
+  skip_before_action :verify_authenticity_token
   def index
     @cars = Car.all
-    render json: @cars
+    render json: {
+      status: 201,
+      message: 'Cars has been successfully shown',
+      data: @cars
+    }, status: :created
   end
 
   # GET /cars/1
   def show
     @car = Car.find(params[:id])
+    render json: {
+      status: 201,
+      message: 'Car has been successfully shown',
+      data: @car
+    }, status: :ok
+  end
+
+  # GET /car/new
+  def new
+    @car = Car.new
     render json: @car
   end
+  
 
   # POST /cars
   def create
     @car = Car.new(car_params)
 
-    if @car.save
-      render json: @car
+    if @car.save!
+      render json: {
+        status: 201,
+        message: 'Car has been successfully created',
+        data: @car
+      }, status: :created
     else
-      render :new, status: :unprocessable_entity
+      render json: { error: 'ERROR: Unable to create the car' }, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +46,7 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.find_by(id: params[:id])
 
     if @car.destroy
-      render json: { message: 'Car deleted successfully' }
+      render json: { message: 'Car deleted successfully', id: params[:id] }
     else
       render json: { message: 'An error occured, plese try again' }, status: :unprocessable_entity
     end
