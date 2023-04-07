@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :cars, only: [:index, :create, :show, :destroy]
       resources :reservations, only: [:index,:show, :create ,:new,:destroy, :update]
       resources :users, only: [:index, :create]
+      post "user/login", to: 'users#login'
     end
   end
 end
