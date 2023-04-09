@@ -11,6 +11,7 @@
 user1 = User.create(name: 'Ndikumana Isaie', email: 'ndikumanaisaie@gmail.com', password: '123456')
 user2 = User.create(name: 'Abdullah Asghar', email: 'dulakhan024@gmail.com', password: '123456')
 user3 = User.create(name: 'Promise Okechukwu', email: 'okechukwupromise638@gmail.com', password: '123456')
+user4 = User.create(name: 'hakiza', email: 'hakiza@gmail.com', password: '123456')
 
 car1 = Car.create(name: 'Jeep', model: 'Range Rover', description: 'Best car ever', price: 2000, user_id: user1.id, image_url: 'https://user-images.githubusercontent.com/65233860/178718381-cd6cfcff-a804-4d35-95af-705794d4c4a8.png')
 car2 = Car.create(name: 'Tesla', model: 'Model X', description: 'With lasting battery', price: 14000, user_id: user2.id, image_url: 'https://user-images.githubusercontent.com/65233860/178718933-f55aea72-e56c-4f14-9032-a4902203f77a.png')
