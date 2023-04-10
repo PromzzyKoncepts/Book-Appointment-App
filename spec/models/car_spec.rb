@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Car, type: :model do
   before(:each) do
+    @user = User.create(
+      name: "John Doe",
+      email: "johndoe@example.com",
+      password: "password"
+    )
     @car = Car.create(
       name: 'Audi',
       model: '2021',
@@ -9,8 +14,8 @@ RSpec.describe Car, type: :model do
       price: 100,
       image_url: 'https://www.audi.com/content/dam/gbp2/experience-audi/audi-models/a4-saloon/2021/1920x1080/1920x1080_A4_Saloon_2021_01.jpg',
       description: 'The Audi A4 is a line of compact executive cars produced since 1994
-        by the German car manufacturer Audi, a subsidiary of the Volkswagen Group.
-        The A4 has been built in five generations and is based on the Volkswagen Group B platform.'
+        by the German car manufacturer Audi, a subsidiary of the Volkswagen Group.',
+      user_id: @user.id
     )
   end
 
