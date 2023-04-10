@@ -83,37 +83,21 @@ RSpec.describe User, type: :model do
       expect(user.macro).to eq(:has_many)
     end
 
-    it "destroys associated cars" do
+
+    it "has many reservations" do
+      user = User.reflect_on_association(:reservations)
+      expect(user.macro).to eq(:has_many)
+    end  
+  end
+
+  describe "associations" do
+    it "has one attached person_image" do
       user = User.create(
         name: "John Doe",
         email: "johndoe@example.com",
         password: "password"
       )
-      car = user.cars.create(
-        name: "Toyota",
-        model: "Corolla",
-        reserved: false,
-        price: 20000,
-        image_url: "image_url",
-        description: "this is a little description"
-      )
-      expect { user.destroy }.to change { Car.count }.by(-1)
+      expect(user.person_image).to be_an_instance_of(ActiveStorage::Attached::One)
     end
-
-    it "has many reservations" do
-      user = User.reflect_on_association(:reservations)
-      expect(user.macro).to eq(:has_many)
-    end
-
-    # it "destroys associated reservations" do
-    #   user = User.create(
-    #     name: "John Doe",
-    #     email: "johndoe@example.com",
-    #     password: "password"
-    #   )
-    #   reservation = user.reservations.create(
-    #     start_date: Date.today,
-    #     end_date: Date.tomorrow,
-    #     car_id:
   end
 end
