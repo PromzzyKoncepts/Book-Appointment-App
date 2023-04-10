@@ -5,7 +5,7 @@ class Car < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 100 }
   validates :model, presence: true, length: { minimum: 3, maximum: 100 }
   validates :price, presence: true
-  validates :image_url, presence: true
-  validates :description, presence: true
+  validates :image_url, presence: true, length: { minimum: 3, maximum: 10000 }
+  validates :description, presence: true, length: { minimum: 3, maximum: 10000 }
   validates :user_id, presence: true
 end
