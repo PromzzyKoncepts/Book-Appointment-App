@@ -28,6 +28,7 @@ class Api::V1::UsersController < ApplicationController
       render json: { status: 'Error', message: 'Invalid email or password' }, status: 401
     end
   end
+
   private
 
   # Only allow a list of trusted parameters through.

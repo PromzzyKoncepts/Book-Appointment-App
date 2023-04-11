@@ -83,7 +83,6 @@ RSpec.describe User, type: :model do
       expect(user.macro).to eq(:has_many)
     end
 
-
     it 'has many reservations' do
       user = User.reflect_on_association(:reservations)
       expect(user.macro).to eq(:has_many)
