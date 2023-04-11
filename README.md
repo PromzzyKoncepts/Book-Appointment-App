@@ -1,24 +1,253 @@
-# README
+<a name="readme-top"></a>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
 
-Things you may want to cover:
+  <img src="https://user-images.githubusercontent.com/84629565/202665566-ba1a8ed3-041f-45bc-b21b-efdcc357189b.png" alt="logo" width="140"  height="auto" />
+  <br/>
 
-* Ruby version
+</div>
 
-* System dependencies
+<!-- TABLE OF CONTENTS -->
 
-* Configuration
+# 📗 Table of Contents
 
-* Database creation
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [Website Mockup 📱 💻 🖥️](#screenshots)
+    - [🖺 Entity Relationship Diagram](#er-diagram)
+  - [<img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board](#kanban-board)
+  - [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend](#react-frontend)
+  - [<img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/spiral-notepad_1f5d2-fe0f.png" width="23" height="20"/> API Documentation](#api-docs)
+  - [🚀 Live Demo](#live-demo)
+  
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-* Database initialization
+<!-- PROJECT DESCRIPTION -->
 
-* How to run the test suite
+# 📖 Regal Cars Backend <a name="about-project"></a>
+![eldorado-logo](https://user-images.githubusercontent.com/84629565/211169801-59cc4f73-65db-4784-81db-c591b74b87ce.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+**Regal Cars** is a luxury car rental application where the user can register new accounts, log in and reserve a set of different cars. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
 
-* Deployment instructions
+## 🛠 Built With <a name="built-with"></a>
 
-* ...
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li>Rails</li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+- **[Luxury Cars List endpoint]**
+- **[JWT authentication to access Reservations]**
+- **[JWT Authorization upon login and register]**
+- **[Authenticated Users can add/mark as removed a Car]**
+- **[Authenticated Users can reserve/remove a Car]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- API Docs -->
+
+## <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/spiral-notepad_1f5d2-fe0f.png" width="23" height="20"/> API Documentation<a name="api-docs"></a>
+
+- Here is the API documentation of the project [El Dorado API-Docs](https://eldorado.onrender.com/api-docs/)
+![api-docs](https://user-images.githubusercontent.com/84629565/215859675-517549c1-a4ed-46e9-97c9-069cf257ff03.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ER DIAGRAM-->
+## :card_index: Entity Relationship Diagram <a name="er-diagram"></a>
+![er-diagram](https://user-images.githubusercontent.com/84629565/215861962-eca3511e-a842-4f99-8bff-fcfc2c97237b.png)
+
+<!-- React Frontend -->
+## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
+- Here is the Frontend part of the project [El Dorado Frontend](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo :rocket:](https://eldorado-rentals.netlify.app/) :smiley:
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+### Prerequisites
+
+To run this project you need:
+`Git` and `Ruby`
+```
+ gem install rails
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  bundle install
+```
+- Generate a secret key using `rails secret`
+- Create a  `.env` file with the following content:
+```
+POSTGRES_USER=postgres
+# If you declared a password when creating the database:
+POSTGRES_PASSWORD=YourPassword
+POSTGRES_HOST=localhost
+POSTGRES_DB=Hello_Rails_Backend_development
+POSTGRES_TEST_DB=Hello_Rails_Backend_test
+# Devise secret key
+DEVISE_JWT_SECRET_KEY=Secret Key you generated
+```
+
+Create a Database (Mandatory)
+
+```
+rails db:create
+```
+
+If you have made a migration then run this command
+
+```
+rails db:migrate
+```
+```
+rails db:seed
+```
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+   rails s -p 3001 # # for serving the API on localhost:3001
+```
+
+Run tests
+```
+bundle exec rspec
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors (4 Micronauts) <a name="authors"></a>
+
+👤 **Aamir Khan**
+
+- GitHub: [@aamirkhan2478](https://github.com/aamirkhan2478)
+- Twitter: [@SmartKhan2478](https://twitter.com/SmartKhan2478)
+- LinkedIn: [Aamir Khan](https://www.linkedin.com/in/aamir-khan-302a44237/)
+
+👤 **Ndikumana Isaie**
+
+- GitHub: [ndikumanaisaie](https://github.com/ndikumanaisaie)
+- Twitter: [Ndikuma38670724](https://twitter.com/Ndikuma38670724)
+- LinkedIn: [Ndikumana Isaie](https://www.linkedin.com/in/ndikumanaisaie/)
+
+👤 **Abdullah Khan**
+
+- GitHub: [@Abdullah](https://github.com/Abdullah2213565)
+- Twitter: [@Abdullah](https://twitter.com/dulakhan024)
+- LinkedIn: [@Abdullah](https://www.linkedin.com/in/abdullah-khan2002/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Admin Roles and access to add New lux Cars]**
+- [ ] **[Keep count of cars using addtional attribute]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank:
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **How I can install rails?**
+
+  - You can follow the [official guide](https://guides.rubyonrails.org/getting_started.html#installing-rails) to install rails. If you have gem installed, you can run `gem install rails` to install rails.
+
+- **How I can run this project?**
+
+  - After cloning the repository, run `bundle` and then run `rails s` with option argument `-p 3001`. This will run the server on `localhost:3001`. You can change the port number if you want. Then you can use any API client to test the endpoints. For example, you can use [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). You can also use the [API Documentation](https://eldorado.onrender.com/api-docs/) to test the endpoints. 
+
+- **How I can run tests?**
+  
+    - After cloning the repository, run `bundle` and then run `rspec` to run the tests. 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

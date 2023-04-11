@@ -1,5 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
-  skip_before_action :authenticate_request, only: %i[create login index]
+  skip_before_action :authenticate_request
   # DO well to comment out the code on line 2
   # GET /reservations
   def index

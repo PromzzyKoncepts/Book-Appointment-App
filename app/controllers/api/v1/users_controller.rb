@@ -18,6 +18,17 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def login
+    @user = User.find_by(email: params[:email])
+
+    if @user&.authenticate(params[:password])
+      token = encode_token(user_id: @user.id)
+      render json: { status: 'Success', message: 'you Logged in successfully', data: { token: }, user: @user }, status: 200
+    else
+      render json: { status: 'Error', message: 'Invalid email or password' }, status: 401
+    end
+  end
+
   private
 
   # Only allow a list of trusted parameters through.
