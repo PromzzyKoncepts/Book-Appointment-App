@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Car, type: :model do
   before(:each) do
     @user = User.create(
-      name: "John Doe",
-      email: "johndoe@example.com",
-      password: "password"
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+      password: 'password'
     )
     @car = Car.create(
       name: 'Audi',

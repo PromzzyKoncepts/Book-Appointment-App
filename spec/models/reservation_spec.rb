@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Reservation, type: :model do
   before :each do
     @user = User.create(
-      name: "John Doe",
-      email: "johndoe@example.com",
-      password: "password"
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+      password: 'password'
     )
     @car = Car.create(
       name: 'Audi',
@@ -17,7 +17,7 @@ RSpec.describe Reservation, type: :model do
         by the German car manufacturer Audi, a subsidiary of the Volkswagen Group.',
       user_id: @user.id
     )
-    @reservation = Reservation.new(user_id: @user.id, car_id: @car.id, city: "Georgia", pickup_date: Date.today, return_date: Date.today + 4.day)
+    @reservation = Reservation.new(user_id: @user.id, car_id: @car.id, city: 'Georgia', pickup_date: Date.today, return_date: Date.today + 4.day)
   end
 
   context 'Testing Validations' do
@@ -52,10 +52,10 @@ RSpec.describe Reservation, type: :model do
 
     it 'should not book car again' do
       @reservation.save
-      @reservation_again = Reservation.new(user_id: @user.id, car_id: @car.id, city: "Georgia", pickup_date: Date.today, return_date: Date.today + 4.day)
+      @reservation_again = Reservation.new(user_id: @user.id, car_id: @car.id, city: 'Georgia', pickup_date: Date.today,
+                                           return_date: Date.today + 4.day)
       expect(@reservation_again).to be_valid
     end
-
   end
 
   context 'Testing Associations' do
