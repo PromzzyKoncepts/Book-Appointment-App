@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   get 'private/test'
 
-  # root "articles#index"
-
   namespace :api do
     namespace :v1, defaults: { format: 'json' } do
       resources :cars, only: [:index, :new, :create, :show, :destroy]
