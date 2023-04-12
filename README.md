@@ -40,9 +40,10 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Regal Cars Backend <a name="about-project"></a>
-![eldorado-logo](https://user-images.githubusercontent.com/84629565/211169801-59cc4f73-65db-4784-81db-c591b74b87ce.png)
+![homepage](https://user-images.githubusercontent.com/54780027/231420790-2eb788b4-5260-417e-b2e1-d47ff7cc14b7.PNG)
 
-**Regal Cars** is a luxury car rental application where the user can register new accounts, log in and reserve a set of different cars. It is built and connected by using two different repos, including Back-end(Rails) and Front-end(React/Redux).
+
+**Regal Cars** is car rental application where the user can create accounts, log in and reserve a set of different cars. It is built and connected by using two different repos: Back-end(Rails) and Front-end(React/Redux).
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -73,34 +74,35 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Luxury Cars List endpoint]**
-- **[JWT authentication to access Reservations]**
-- **[JWT Authorization upon login and register]**
-- **[Authenticated Users can add/mark as removed a Car]**
-- **[Authenticated Users can reserve/remove a Car]**
+- **[Car List endpoints]**
+- **[Authentication to access Reservations]**
+- **[Authenticated Users can add/remove a Car]**
+- **[Authenticated Users can reserve a Car]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- API Docs -->
 
-## <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/spiral-notepad_1f5d2-fe0f.png" width="23" height="20"/> API Documentation<a name="api-docs"></a>
-
-- Here is the API documentation of the project [El Dorado API-Docs](https://eldorado.onrender.com/api-docs/)
-![api-docs](https://user-images.githubusercontent.com/84629565/215859675-517549c1-a4ed-46e9-97c9-069cf257ff03.png)
+![API docs](https://user-images.githubusercontent.com/54780027/231417300-1e05901f-da89-4475-b7f6-a17102811dda.PNG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ER DIAGRAM-->
 ## :card_index: Entity Relationship Diagram <a name="er-diagram"></a>
-![er-diagram](https://user-images.githubusercontent.com/84629565/215861962-eca3511e-a842-4f99-8bff-fcfc2c97237b.png)
+![erd](https://user-images.githubusercontent.com/54780027/231417553-6cf720cb-76db-47f9-8923-3b7c8af175f9.PNG)
 
 <!-- React Frontend -->
 ## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
-- Here is the Frontend part of the project [El Dorado Frontend](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
+- Here is the Frontend part of the project [Front End](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
+
+## 🚀 kanban board <a name="board"></a>
+
+- Here is the kanban board of the project
+- ![kanban board](https://user-images.githubusercontent.com/54780027/231417798-2c94099c-f01a-478a-b9c4-3f76d9276478.PNG)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo :rocket:](https://eldorado-rentals.netlify.app/) :smiley:
+- [Live Demo :rocket:](https://regal.netlify.app/) :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -237,7 +239,7 @@ I would like to thank:
 
 - **How I can run this project?**
 
-  - After cloning the repository, run `bundle` and then run `rails s` with option argument `-p 3001`. This will run the server on `localhost:3001`. You can change the port number if you want. Then you can use any API client to test the endpoints. For example, you can use [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). You can also use the [API Documentation](https://eldorado.onrender.com/api-docs/) to test the endpoints. 
+  - After cloning the repository, run `bundle` and then run `rails s` with option argument `-p 3000`. This will run the server on `localhost:3000`. You can change the port number if you want. Then you can use any API client to test the endpoints. For example, you can use [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). You can also use the [API Documentation](https://eldorado.onrender.com/api-docs/) to test the endpoints. 
 
 - **How I can run tests?**
   
