@@ -1,0 +1,196 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      tags:
+      - Cars
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                model:
+                  type: string
+                reserved:
+                  type: boolean
+                price:
+                  type: integer
+                image_url:
+                  type: string
+                user_id:
+                  type: integer
+              required:
+              - name
+              - model
+              - price
+              - image_url
+              - user_id
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: Delete car
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: car deleted successfully
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pickup_date:
+                  type: string
+                  format: date
+                  required: true
+                return_date:
+                  type: string
+                  format: date
+                  required: true
+                city:
+                  type: string
+                user_id:
+                  type: integer
+                car_id:
+                  type: integer
+              required:
+              - pickup_date
+              - return_date
+              - city
+              - user_id
+              - car_id
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservation
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/register":
+    post:
+      summary: New user registration
+      tags:
+      - Register User
+      parameters: []
+      responses:
+        '200':
+          description: successful
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+  "/login":
+    post:
+      summary: Log in
+      tags:
+      - User session
+      parameters: []
+      responses:
+        '200':
+          description: successful
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/sign_out":
+    delete:
+      summary: Log out
+      tags:
+      - Delete session
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
