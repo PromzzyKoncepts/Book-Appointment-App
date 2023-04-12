@@ -40,7 +40,7 @@ RSpec.describe 'api/v1/cars', type: :request do
           }
           response '401', 'car created successfully' do
             let(:car) do
-              { model: 'Tesla', price: 20000, image_url: 'photo.jpeg',
+              { model: 'Tesla', price: 20_000, image_url: 'photo.jpeg',
                 user_id: 1 }
             end
             run_test!
