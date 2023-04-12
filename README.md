@@ -157,12 +157,14 @@ rails db:seed
 To run the project, execute the following command:
 
 ```sh
-   rails s -p 3001 # # for serving the API on localhost:3001
+   rails s # to run the server on default port
+   rails s -p 3001 # for serving the API on localhost:3001 if default is busy
 ```
 
 Run tests
 ```
-bundle exec rspec
+rspec spec/models
+rspec spec/routes
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
