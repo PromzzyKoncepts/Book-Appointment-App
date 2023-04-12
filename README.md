@@ -128,16 +128,9 @@ Install this project with:
 - Generate a secret key using `rails secret`
 - Create a  `.env` file with the following content:
 ```
-POSTGRES_USER=postgres
-# If you declared a password when creating the database:
-POSTGRES_PASSWORD=YourPassword
-POSTGRES_HOST=localhost
-POSTGRES_DB=Hello_Rails_Backend_development
-POSTGRES_TEST_DB=Hello_Rails_Backend_test
-# Devise secret key
-DEVISE_JWT_SECRET_KEY=Secret Key you generated
+DATABASE_USERNAME = {YOUR DATABASE USERNAME || postgres}
+DATABASE_PASSWORD = {YOUR DATABASE PASSWORD}
 ```
-
 Create a Database (Mandatory)
 
 ```
@@ -157,8 +150,8 @@ rails db:seed
 To run the project, execute the following command:
 
 ```sh
-   rails s # to run the server on default port
-   rails s -p 3001 # for serving the API on localhost:3001 if default is busy
+   rails s  # to run the server on default port 3000
+   # to be able to access the database
 ```
 
 Run tests
