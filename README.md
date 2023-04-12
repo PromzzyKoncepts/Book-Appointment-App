@@ -169,13 +169,13 @@ bundle exec rspec
 
 <!-- AUTHORS -->
 
-## 👥 Authors (4 Micronauts) <a name="authors"></a>
+## 👥 Authors (3 Micronauts) <a name="authors"></a>
 
-👤 **Aamir Khan**
+👤 **Promise Okechukwu**
 
-- GitHub: [@aamirkhan2478](https://github.com/aamirkhan2478)
-- Twitter: [@SmartKhan2478](https://twitter.com/SmartKhan2478)
-- LinkedIn: [Aamir Khan](https://www.linkedin.com/in/aamir-khan-302a44237/)
+- GitHub: [@promzzykoncepts](https://github.com/PromzzyKoncepts)
+- Twitter: [@pr0mzzy](https://twitter.com/prOmzzy)
+- LinkedIn: [promiseokechukwu](https://www.linkedin.com/in/promiseokechukwu/)
 
 👤 **Ndikumana Isaie**
 
