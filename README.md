@@ -73,11 +73,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Luxury Cars List endpoint]**
-- **[JWT authentication to access Reservations]**
-- **[JWT Authorization upon login and register]**
-- **[Authenticated Users can add/mark as removed a Car]**
-- **[Authenticated Users can reserve/remove a Car]**
+- **[Car List endpoints]**
+- **[Authentication to access Reservations]**
+- **[Authenticated Users can add/remove a Car]**
+- **[Authenticated Users can reserve a Car]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,11 +95,15 @@
 
 <!-- React Frontend -->
 ## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
-- Here is the Frontend part of the project [El Dorado Frontend](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
+- Here is the Frontend part of the project [Front End](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
 
+## 🚀 kanban board <a name="live-demo"></a>
+
+- Here is the kanban board of the project
+- [Kanban board](https://user-images.githubusercontent.com/69632681/228828907-ff866fe3-5a01-4b02-b6d6-d9e957565824.png)
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo :rocket:](https://eldorado-rentals.netlify.app/) :smiley:
+- [Live Demo :rocket:](https://regal.netlify.app/) :smiley:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -237,7 +240,7 @@ I would like to thank:
 
 - **How I can run this project?**
 
-  - After cloning the repository, run `bundle` and then run `rails s` with option argument `-p 3001`. This will run the server on `localhost:3001`. You can change the port number if you want. Then you can use any API client to test the endpoints. For example, you can use [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). You can also use the [API Documentation](https://eldorado.onrender.com/api-docs/) to test the endpoints. 
+  - After cloning the repository, run `bundle` and then run `rails s` with option argument `-p 3000`. This will run the server on `localhost:3000`. You can change the port number if you want. Then you can use any API client to test the endpoints. For example, you can use [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/). You can also use the [API Documentation](https://eldorado.onrender.com/api-docs/) to test the endpoints. 
 
 - **How I can run tests?**
   
