@@ -40,7 +40,8 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Regal Cars Backend <a name="about-project"></a>
-![eldorado-logo](https://user-images.githubusercontent.com/84629565/211169801-59cc4f73-65db-4784-81db-c591b74b87ce.png)
+![homepage](https://user-images.githubusercontent.com/54780027/231420790-2eb788b4-5260-417e-b2e1-d47ff7cc14b7.PNG)
+
 
 **Regal Cars** is car rental application where the user can create accounts, log in and reserve a set of different cars. It is built and connected by using two different repos: Back-end(Rails) and Front-end(React/Redux).
 
