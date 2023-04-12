@@ -82,25 +82,23 @@
 
 <!-- API Docs -->
 
-## <img src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/spiral-notepad_1f5d2-fe0f.png" width="23" height="20"/> API Documentation<a name="api-docs"></a>
-
-- Here is the API documentation of the project [El Dorado API-Docs](https://eldorado.onrender.com/api-docs/)
-![api-docs](https://user-images.githubusercontent.com/84629565/215859675-517549c1-a4ed-46e9-97c9-069cf257ff03.png)
+![API docs](https://user-images.githubusercontent.com/54780027/231417300-1e05901f-da89-4475-b7f6-a17102811dda.PNG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ER DIAGRAM-->
 ## :card_index: Entity Relationship Diagram <a name="er-diagram"></a>
-![er-diagram](https://user-images.githubusercontent.com/84629565/215861962-eca3511e-a842-4f99-8bff-fcfc2c97237b.png)
+![erd](https://user-images.githubusercontent.com/54780027/231417553-6cf720cb-76db-47f9-8923-3b7c8af175f9.PNG)
 
 <!-- React Frontend -->
 ## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
 - Here is the Frontend part of the project [Front End](https://github.com/PromzzyKoncepts/Book-Appointment-Front-end)
 
-## 🚀 kanban board <a name="live-demo"></a>
+## 🚀 kanban board <a name="board"></a>
 
 - Here is the kanban board of the project
-- [Kanban board](https://user-images.githubusercontent.com/69632681/228828907-ff866fe3-5a01-4b02-b6d6-d9e957565824.png)
+- ![kanban board](https://user-images.githubusercontent.com/54780027/231417798-2c94099c-f01a-478a-b9c4-3f76d9276478.PNG)
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo :rocket:](https://regal.netlify.app/) :smiley:
