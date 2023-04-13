@@ -29,9 +29,13 @@ class Api::V1::ReservationsController < ApplicationController
 
   # DELETE /reservations/1
   def destroy
-    reservation = Reservation.find_by_id(params[:id])
-    reservation.destroy
-    render json: { status: 'SUCCESS', message: 'Reservation deleted successfully', data: reservation }, status: :ok
+    reservation = Reservation.find_by(id: params[:id])
+
+    if reservation.destroy
+      render json: { message: 'reservation deleted successfully', id: params[:id] }
+    else
+      render json: { message: 'An error occured, plese try again' }, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /reservations/1
