@@ -41,6 +41,17 @@ class Api::V1::CarsController < ApplicationController
     end
   end
 
+    # PATCH/PUT /cars/1
+  def update
+    car = Car.find(params[:id])
+    if car.update(car_params)
+      render json: { status: 'SUCCESS', message: 'car updated successfully', data: car }, status: :ok
+    else
+      render json: { status: 'ERROR', message: 'An error occurred while updating the car', data: car.errors },
+              status: :unprocessable_entity
+    end
+  end
+
   # DELETE /cars/1
   def destroy
     @car = Car.find_by(id: params[:id])
